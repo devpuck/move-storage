@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.move.MoveWarehouseBillMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.model.entity.MoveWarehouseBillEntity">
+        <id column="ID" property="id" />
+    <result column="CREATED_BY" property="createdBy" />
+    <result column="CREATED_DATE" property="createdDate" />
+    <result column="LAST_UPDATED_BY" property="lastUpdatedBy" />
+    <result column="LAST_UPDATED_DATE" property="lastUpdatedDate" />
+    <result column="DELETED_BY" property="deletedBy" />
+    <result column="DELETED_DATE" property="deletedDate" />
+    <result column="IS_DELETED" property="isDeleted" />
+        <result column="MOVE_OUT_WAREHOUSE_CODE" property="moveOutWarehouseCode" />
+        <result column="MOVE_IN_WAREHOUSE_CODE" property="moveInWarehouseCode" />
+        <result column="BILL_CODE" property="billCode" />
+        <result column="MOVE_OUT_BILL_CODE" property="moveOutBillCode" />
+        <result column="MOVE_IN_BILL_CODE" property="moveInBillCode" />
+        <result column="STATUS" property="status" />
+        <result column="NEED_QUALITY" property="needQuality" />
+        <result column="QUALITY_CATEGORY" property="qualityCategory" />
+        <result column="VERSION" property="version" />
+        <result column="NOTE" property="note" />
+    </resultMap>
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BoResultMap" type="com.wms.model.bo.move.MoveWarehouseBillBo">
+        <id column="ID" property="id" />
+        <result column="CREATED_BY" property="createdBy" />
+        <result column="CREATED_DATE" property="createdDate" />
+        <result column="LAST_UPDATED_BY" property="lastUpdatedBy" />
+        <result column="LAST_UPDATED_DATE" property="lastUpdatedDate" />
+        <result column="DELETED_BY" property="deletedBy" />
+        <result column="DELETED_DATE" property="deletedDate" />
+        <result column="IS_DELETED" property="isDeleted" />
+                <result column="MOVE_OUT_WAREHOUSE_CODE" property="moveOutWarehouseCode" />
+                <result column="MOVE_IN_WAREHOUSE_CODE" property="moveInWarehouseCode" />
+                <result column="BILL_CODE" property="billCode" />
+                <result column="MOVE_OUT_BILL_CODE" property="moveOutBillCode" />
+                <result column="MOVE_IN_BILL_CODE" property="moveInBillCode" />
+                <result column="STATUS" property="status" />
+                <result column="NEED_QUALITY" property="needQuality" />
+                <result column="QUALITY_CATEGORY" property="qualityCategory" />
+                <result column="VERSION" property="version" />
+                <result column="NOTE" property="note" />
+        </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CREATED_BY,
+        CREATED_DATE,
+        LAST_UPDATED_BY,
+        LAST_UPDATED_DATE,
+        DELETED_BY,
+        DELETED_DATE,
+        IS_DELETED,
+        ID, MOVE_OUT_WAREHOUSE_CODE, MOVE_IN_WAREHOUSE_CODE, BILL_CODE, MOVE_OUT_BILL_CODE, MOVE_IN_BILL_CODE, STATUS, NEED_QUALITY, QUALITY_CATEGORY, VERSION, NOTE
+    </sql>
+
+    <select id="getMoveWarehouseBillById" resultMap="BoResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from WMS_MOVE_WAREHOUSE_BILL where id = #{id}
+    </select>
+
+    <select id="getMoveWarehouseBillPageList" resultMap="BoResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from WMS_MOVE_WAREHOUSE_BILL
+    </select>
+
+</mapper>

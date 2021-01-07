@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.move.MoveWarehouseQualityResultMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.model.entity.MoveWarehouseQualityResultEntity">
+        <id column="ID" property="id" />
+    <result column="CREATED_BY" property="createdBy" />
+    <result column="CREATED_DATE" property="createdDate" />
+    <result column="LAST_UPDATED_BY" property="lastUpdatedBy" />
+    <result column="LAST_UPDATED_DATE" property="lastUpdatedDate" />
+    <result column="DELETED_BY" property="deletedBy" />
+    <result column="DELETED_DATE" property="deletedDate" />
+    <result column="IS_DELETED" property="isDeleted" />
+        <result column="BILL_CODE" property="billCode" />
+        <result column="SUB_BILL_CODE" property="subBillCode" />
+        <result column="BILL_TYPE" property="billType" />
+        <result column="ACCOUNT_ID" property="accountId" />
+        <result column="PRODUCTION_CODE" property="productionCode" />
+        <result column="QUALITY_CODE" property="qualityCode" />
+        <result column="BEFORE_QUALITY_STATUS" property="beforeQualityStatus" />
+        <result column="QUALITY_RESULT" property="qualityResult" />
+        <result column="QUALIFIED_QUANTITY" property="qualifiedQuantity" />
+        <result column="UNQUALIFIED_QUANTITY" property="unqualifiedQuantity" />
+        <result column="CERTIFICATE_NO" property="certificateNo" />
+        <result column="STATUS" property="status" />
+        <result column="QUALITY_DETAILS" property="qualityDetails" />
+        <result column="QUALITY_TIME" property="qualityTime" />
+    </resultMap>
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BoResultMap" type="com.wms.model.bo.move.MoveWarehouseQualityResultBo">
+        <id column="ID" property="id" />
+        <result column="CREATED_BY" property="createdBy" />
+        <result column="CREATED_DATE" property="createdDate" />
+        <result column="LAST_UPDATED_BY" property="lastUpdatedBy" />
+        <result column="LAST_UPDATED_DATE" property="lastUpdatedDate" />
+        <result column="DELETED_BY" property="deletedBy" />
+        <result column="DELETED_DATE" property="deletedDate" />
+        <result column="IS_DELETED" property="isDeleted" />
+                <result column="BILL_CODE" property="billCode" />
+                <result column="SUB_BILL_CODE" property="subBillCode" />
+                <result column="BILL_TYPE" property="billType" />
+                <result column="ACCOUNT_ID" property="accountId" />
+                <result column="PRODUCTION_CODE" property="productionCode" />
+                <result column="QUALITY_CODE" property="qualityCode" />
+                <result column="BEFORE_QUALITY_STATUS" property="beforeQualityStatus" />
+                <result column="QUALITY_RESULT" property="qualityResult" />
+                <result column="QUALIFIED_QUANTITY" property="qualifiedQuantity" />
+                <result column="UNQUALIFIED_QUANTITY" property="unqualifiedQuantity" />
+                <result column="CERTIFICATE_NO" property="certificateNo" />
+                <result column="STATUS" property="status" />
+                <result column="QUALITY_DETAILS" property="qualityDetails" />
+                <result column="QUALITY_TIME" property="qualityTime" />
+        </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        CREATED_BY,
+        CREATED_DATE,
+        LAST_UPDATED_BY,
+        LAST_UPDATED_DATE,
+        DELETED_BY,
+        DELETED_DATE,
+        IS_DELETED,
+        ID, BILL_CODE, SUB_BILL_CODE, BILL_TYPE, ACCOUNT_ID, PRODUCTION_CODE, QUALITY_CODE, BEFORE_QUALITY_STATUS, QUALITY_RESULT, QUALIFIED_QUANTITY, UNQUALIFIED_QUANTITY, CERTIFICATE_NO, STATUS, QUALITY_DETAILS, QUALITY_TIME
+    </sql>
+
+    <select id="getMoveWarehouseQualityResultById" resultMap="BoResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from WMS_MOVE_WAREHOUSE_QUALITY_RESULT where id = #{id}
+    </select>
+
+    <select id="getMoveWarehouseQualityResultPageList" resultMap="BoResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from WMS_MOVE_WAREHOUSE_QUALITY_RESULT
+    </select>
+
+</mapper>
