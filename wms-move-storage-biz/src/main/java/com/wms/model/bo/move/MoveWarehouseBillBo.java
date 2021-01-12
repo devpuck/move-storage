@@ -6,6 +6,7 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <pre>
@@ -13,7 +14,7 @@ import java.util.Date;
  * </pre>
  *
  * @author puck
- * @date 2020-12-22
+ * @date 2021-01-11
  */
 @Data
 @Accessors(chain = true)
@@ -39,6 +40,11 @@ public class MoveWarehouseBillBo extends BaseBo implements Serializable {
      * 移库单号
      */
     private String billCode;
+
+    /**
+     * 事务编码
+     */
+    private String workCode;
 
     /**
      * 出库单号，自动创建
@@ -68,5 +74,10 @@ public class MoveWarehouseBillBo extends BaseBo implements Serializable {
     private String version;
 
     private String note;
+
+    /**
+     * 移库单子表
+     */
+    List<MoveWarehouseBillSubBo> moveWarehouseBillSubBoList;
 
 }

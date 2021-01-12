@@ -19,7 +19,7 @@ import javax.validation.constraints.NotNull;
  * </pre>
  *
  * @author puck
- * @since 2020-12-22
+ * @since 2021-01-11
  */
 @Data
 @Accessors(chain = true)
@@ -49,6 +49,11 @@ public class MoveWarehouseBillEntity extends BaseEntity {
      * 移库单号
      */
     private String billCode;
+
+    /**
+     * 事务编码
+     */
+    private String workCode;
 
     /**
      * 出库单号，自动创建

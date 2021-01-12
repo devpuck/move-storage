@@ -14,7 +14,7 @@ import java.io.Serializable;
  * </pre>
  *
  * @author puck
- * @since 2020-12-22
+ * @since 2021-01-11
  */
 public interface MoveWarehouseBillService extends BaseService<MoveWarehouseBillEntity> {
 
@@ -25,7 +25,7 @@ public interface MoveWarehouseBillService extends BaseService<MoveWarehouseBillE
      * @return
      * @throws Exception
      */
-    boolean saveMoveWarehouseBill(MoveWarehouseBillBo moveWarehouseBill);
+    boolean saveMoveWarehouseBill(MoveWarehouseBillBo moveWarehouseBill) throws Exception;
 
     /**
      * 修改

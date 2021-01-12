@@ -5,9 +5,11 @@ import io.swagger.annotations.ApiModelProperty;
 import com.xac.core.vo.BaseVo;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <pre>
@@ -15,12 +17,13 @@ import java.util.Date;
  * </pre>
  *
  * @author puck
- * @date 2020-12-22
+ * @date 2021-01-11
  */
 @Data
 @Accessors(chain = true)
 @ApiModel(value = "MoveWarehouseBillVo对象", description = "移库表查询参数")
-public class MoveWarehouseBillVo extends BaseVo implements Serializable {
+public class MoveWarehouseBillVo extends BaseVo implements Serializable
+{
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "表id")
@@ -29,11 +32,14 @@ public class MoveWarehouseBillVo extends BaseVo implements Serializable {
     @ApiModelProperty(value = "移出库房编码")
     private String moveOutWarehouseCode;
 
-    @ApiModelProperty(value = "移出库房编码")
+    @ApiModelProperty(value = "移入库房编码")
     private String moveInWarehouseCode;
 
     @ApiModelProperty(value = "移库单号")
     private String billCode;
+
+    @ApiModelProperty(value = "事务编码")
+    private String workCode;
 
     @ApiModelProperty(value = "出库单号，自动创建")
     private String moveOutBillCode;
@@ -50,8 +56,11 @@ public class MoveWarehouseBillVo extends BaseVo implements Serializable {
     @ApiModelProperty(value = "质检后处理状态，主要是不合格如何处理，如退回原库，还是转移到原库")
     private String qualityCategory;
 
-private String version;
+    private String version;
 
-private String note;
+    private String note;
+
+    @ApiModelProperty(value = "移库单子表")
+    private List<MoveWarehouseBillSubVo> moveWarehouseBillSubVoList;
 
 }

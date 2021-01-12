@@ -17,7 +17,7 @@ import java.io.Serializable;
  * </pre>
  *
  * @author puck
- * @since 2020-12-24
+ * @since 2021-01-11
  */
 @Repository
 public interface MoveWarehouseBillSubMapper extends BaseMapper<MoveWarehouseBillSubEntity> {

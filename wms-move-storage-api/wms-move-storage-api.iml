@@ -9,6 +9,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.wms:wms-account-manager-api:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.wms:wms-in-storage-api:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.wms:wms-out-storage-api:1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.xac.core:xac-core:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.2.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.2.2.RELEASE" level="project" />
